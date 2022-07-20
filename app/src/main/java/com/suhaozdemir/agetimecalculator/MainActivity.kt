@@ -41,8 +41,7 @@ class MainActivity : AppCompatActivity() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-
-        DatePickerDialog(this,
+        val datePickerDialog =  DatePickerDialog(this,
             { _, selectedYear, selectedMonth, selectedDayOfMonth ->
 
                 val selectedDate = "$selectedDayOfMonth/${selectedMonth+1}/$selectedYear"
@@ -53,22 +52,25 @@ class MainActivity : AppCompatActivity() {
                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
                 val date = sdf.parse(selectedDate)
 
-                val selectedDateInMinutes = date.time / 60000
-                val currentDateInMinutes = System.currentTimeMillis() / 60000
+                date?.let {
+                    val selectedDateInMinutes = date.time / 60000
+                    val currentDateInMinutes = System.currentTimeMillis() / 60000
 
-                val diffInMinutes = currentDateInMinutes - selectedDateInMinutes
-                val diffInYears = year - selectedYear
+                    val diffInMinutes = currentDateInMinutes - selectedDateInMinutes
+                    val diffInYears = year - selectedYear
 
-                txtYears?.text = diffInYears.toString()
-                txtMinutes?.text = diffInMinutes.toString()
-                txtSeconds?.text = (diffInMinutes * 60).toString()
-                txtDays?.text = (diffInMinutes / 1440).toString()
+                    txtYears?.text = diffInYears.toString()
+                    txtMinutes?.text = diffInMinutes.toString()
+                    txtSeconds?.text = (diffInMinutes * 60).toString()
+                    txtDays?.text = (diffInMinutes / 1440).toString()
+                }
             },
-        year,
-        month,
-        day).show()
+            year,
+            month,
+            day)
 
-
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis() - 86400000 // 1 day = 86.400.000 milliseconds
+        datePickerDialog.show()
 
     }
 }
