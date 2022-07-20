@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">AgeTimeCalculator</string>
+    <string name="app_name">Age In Minutes</string>
+    <string name="app_header">Calculate Your Age</string>
+    <string name="button_text">Pick a Date</string>
+    <string name="selected_text">Selected Date</string>
+    <string name="placeholder_date">01.01.2000</string>
 </resources>
