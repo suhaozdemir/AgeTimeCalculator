@@ -10,18 +10,18 @@
     tools:context=".MainActivity">
 
     <View
-        android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="100dp"
+        android:id="@+id/view_calc"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/bgText"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_calcView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/bgText"
@@ -30,68 +30,216 @@
         android:textColor="@color/textColor"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintBottom_toBottomOf="@+id/view_calc"
+        app:layout_constraintEnd_toEndOf="@+id/view_calc"
+        app:layout_constraintStart_toStartOf="@+id/view_calc"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="501dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="526dp"
         android:backgroundTint="@color/bgText"
         android:text="@string/button_text"
         android:textColor="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/view_calc" />
 
     <View
+        android:id="@+id/view_selected"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:background="@color/bgText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btn_date"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="462dp"
-        android:text="@string/placeholder_date"
-        android:textColor="@color/textColor"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_selectedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/selected_text"
         android:textColor="@color/textColor"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintBottom_toBottomOf="@+id/view_selected"
+        app:layout_constraintEnd_toEndOf="@+id/view_selected"
+        app:layout_constraintStart_toStartOf="@+id/view_selected"
+        app:layout_constraintTop_toTopOf="@+id/view_selected"
+        app:layout_constraintVertical_bias="0.712" />
 
+    <TextView
+        android:id="@+id/txt_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder_date"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_selectedView"
+        app:layout_constraintEnd_toEndOf="@+id/view_selected"
+        app:layout_constraintStart_toStartOf="@+id/view_selected"
+        app:layout_constraintTop_toTopOf="@+id/view_selected"
+        app:layout_constraintVertical_bias="0.769" />
+
+    <View
+        android:id="@+id/view_year"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/bgText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_selected" />
+
+    <View
+        android:id="@+id/view_minute"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/bgText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_year" />
+
+    <View
+        android:id="@+id/view_day"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/bgText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/view_year"
+        app:layout_constraintTop_toBottomOf="@+id/view_selected" />
+
+    <View
+        android:id="@+id/view_second"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/bgText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toEndOf="@+id/view_minute"
+        app:layout_constraintTop_toBottomOf="@+id/view_day" />
+
+    <TextView
+        android:id="@+id/txt_years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_yearsView"
+        app:layout_constraintEnd_toEndOf="@+id/view_year"
+        app:layout_constraintStart_toStartOf="@+id/view_year"
+        app:layout_constraintTop_toTopOf="@+id/view_year" />
+
+    <TextView
+        android:id="@+id/txt_yearsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/years"
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_year"
+        app:layout_constraintEnd_toEndOf="@+id/view_year"
+        app:layout_constraintStart_toStartOf="@+id/view_year"
+        app:layout_constraintTop_toTopOf="@+id/view_year"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <TextView
+        android:id="@+id/txt_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txt_daysView"
+        app:layout_constraintEnd_toEndOf="@+id/view_day"
+        app:layout_constraintStart_toStartOf="@+id/view_day"
+        app:layout_constraintTop_toTopOf="@+id/view_day" />
+
+    <TextView
+        android:id="@+id/txt_daysView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/days"
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_day"
+        app:layout_constraintEnd_toEndOf="@+id/view_day"
+        app:layout_constraintStart_toStartOf="@+id/view_day"
+        app:layout_constraintTop_toTopOf="@+id/view_day"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <TextView
+        android:id="@+id/txt_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_minuteView"
+        app:layout_constraintEnd_toEndOf="@+id/view_minute"
+        app:layout_constraintStart_toStartOf="@+id/view_minute"
+        app:layout_constraintTop_toTopOf="@+id/view_minute" />
+
+    <TextView
+        android:id="@+id/txt_minuteView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minutes"
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_minute"
+        app:layout_constraintEnd_toEndOf="@+id/view_minute"
+        app:layout_constraintStart_toStartOf="@+id/view_minute"
+        app:layout_constraintTop_toTopOf="@+id/view_minute"
+        app:layout_constraintVertical_bias="0.712" />
+
+    <TextView
+        android:id="@+id/txt_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_secondView"
+        app:layout_constraintEnd_toEndOf="@+id/view_second"
+        app:layout_constraintStart_toStartOf="@+id/view_second"
+        app:layout_constraintTop_toTopOf="@+id/view_second" />
+
+    <TextView
+        android:id="@+id/txt_secondView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/seconds"
+        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_second"
+        app:layout_constraintEnd_toEndOf="@+id/view_second"
+        app:layout_constraintStart_toStartOf="@+id/view_second"
+        app:layout_constraintTop_toTopOf="@+id/view_second"
+        app:layout_constraintVertical_bias="0.712" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
