@@ -170,7 +170,6 @@
         android:text="@string/zero"
         android:textColor="@color/textColor"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txt_daysView"
         app:layout_constraintEnd_toEndOf="@+id/view_day"
         app:layout_constraintStart_toStartOf="@+id/view_day"

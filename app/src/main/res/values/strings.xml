@@ -3,7 +3,7 @@
     <string name="app_header">Calculate Your Age</string>
     <string name="button_text">Pick a Date</string>
     <string name="selected_text">Selected Date</string>
-    <string name="placeholder_date">01.01.2000</string>
+    <string name="placeholder_date">01/01/2000</string>
     <string name="zero">0</string>
     <string name="days">Days</string>
     <string name="years">Years</string>
